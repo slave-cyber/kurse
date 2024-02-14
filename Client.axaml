@@ -1,0 +1,46 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:galenko="clr-namespace:Galenko"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        x:Class="Galenko.Client"
+        Title="Client"
+        x:DataType="galenko:clients">
+     <StackPanel Name="Main">
+    <StackPanel Name="TextPanel" Orientation="Horizontal" Margin="10">
+        <Button Name="Back" Click="Back_OnClick">Назад</Button>
+        <TextBlock>ID</TextBlock>
+        <TextBox Name="t1"></TextBox>
+        
+        <TextBlock>Имя клиента</TextBlock>
+        <TextBox Name="t2"></TextBox>
+        
+        <TextBlock>Телефон Клиента</TextBlock>
+        <TextBox Name="t3"></TextBox>
+        
+        <TextBlock>Адрес клиента</TextBlock>
+        <TextBox Name="t4"></TextBox>
+        
+        <TextBlock>Поиск</TextBlock>
+        <TextBox Name="t5" TextChanged="T5_OnTextChanged"></TextBox>
+        
+    </StackPanel>
+        <StackPanel Margin="10" Orientation="Horizontal">
+            <Button Name="Add" Background="Orange" Click="Add_OnClick">Add</Button>
+            <Button Name="Save" Background="Orange" Click="Save_OnClick">Save</Button>
+            <Button Name="Update" Background="Orange" Click="Update_OnClick">Update</Button>
+            <Button Name="Delete" Background="Orange" Click="Delete_OnClick">Delete</Button>
+        </StackPanel>
+            <StackPanel Name="GridPanel" Background="Cornsilk">
+        <DataGrid Name="Grid">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="id" Binding="{Binding id2}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Имя клиента" Binding="{Binding nameC}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Телефон клиента" Binding="{Binding numbers}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Адрес клиента" Binding="{Binding addreses}"></DataGridTextColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+    </StackPanel>
+    </StackPanel>
+</Window>

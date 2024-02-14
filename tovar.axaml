@@ -1,0 +1,57 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:galenko="clr-namespace:Galenko"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        x:Class="Galenko.tovar"
+        Title="orders"
+        x:DataType="galenko:scripts">
+    <StackPanel Name="Main">
+    <StackPanel Name="TextPanel" Orientation="Horizontal" Margin="10">
+        <Button Name="Back" Click="Back_OnClick">Назад</Button>
+        <TextBlock>ID</TextBlock>
+        <TextBox Name="t1"></TextBox>
+        
+        <TextBlock>Название</TextBlock>
+        <TextBox Name="t2"></TextBox>
+        
+        <TextBlock>Opis</TextBlock>
+        <TextBox Name="t3"></TextBox>
+        
+        <TextBlock>prise</TextBlock>
+        <TextBox Name="t4"></TextBox>
+        
+        <ComboBox Name="Box" Margin="10 0 0 0" SelectionChanged="Box_OnSelectionChanged" x:CompileBindings="False">
+            <ComboBox.ItemTemplate>
+                <DataTemplate>
+                    <TextBlock Text="{Binding adres}"></TextBlock>
+                </DataTemplate>
+            </ComboBox.ItemTemplate>
+        </ComboBox>
+        <ComboBox Name="BoxName" Margin="10 0 0 0" SelectionChanged="BoxName_OnSelectionChanged" x:CompileBindings="False">
+            <ComboBox.ItemTemplate>
+                <DataTemplate>
+                    <TextBlock Text="{Binding number}"></TextBlock>
+                </DataTemplate>
+            </ComboBox.ItemTemplate>
+        </ComboBox>
+    </StackPanel>
+        <StackPanel Margin="10" Orientation="Horizontal">
+            <Button Name="Add" Background="Orange" Click="Add_OnClick">Add</Button>
+            <Button Name="Save" Background="Orange" Click="Save_OnClick">Save</Button>
+            <Button Name="Update" Background="Orange" Click="Update_OnClick">Update</Button>
+            <Button Name="Delete" Background="Orange" Click="Delete_OnClick">Delete</Button>
+        </StackPanel>
+            <StackPanel Name="GridPanel" Background="Cornsilk">
+        <DataGrid Name="Grid">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="id" Binding="{Binding id}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Name" Binding="{Binding Name}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Opis" Binding="{Binding Opis}"></DataGridTextColumn>
+                <DataGridTextColumn Header="prise" Binding="{Binding prise}"></DataGridTextColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+    </StackPanel>
+    </StackPanel>
+</Window>
